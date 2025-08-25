@@ -1,6 +1,4 @@
-// ================================
-// Complete Graph Algorithms Template
-// ================================
+
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -9,17 +7,6 @@ const int N = 1e5;
 vector<int> adj[N];
 bool visited[N];
 
-// ================================
-// Dynamic Programming Templates
-// ================================
-
-// [Already present DP templates... kept unchanged here for brevity.]
-
-// ================================
-// Tree / BST / AVL Tree Templates
-// ================================
-
-// [Already present 20 BST templates... kept unchanged here for brevity.]
 
 // ================================
 // Hashing Templates (Hash Maps, Sets, Rolling Hashes, Open Addressing, etc.)

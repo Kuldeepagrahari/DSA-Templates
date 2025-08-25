@@ -1,19 +1,14 @@
-// ================================
-// Complete Graph Algorithms Template
-// ================================
 
 #include <bits/stdc++.h>
 using namespace std;
-
 const int N = 1e5;
-vector<int> adj[N];
-bool visited[N];
+
 
 // ================================
 // Dynamic Programming Templates
 // ================================
 
-// 1. 0/1 Knapsack
+// 1. 0/1 Knapsack [Done]
 // Intuition: For each item, choose to include or exclude it. Classic DP.
 // Useful when item can be taken at most once.
 int knapsack01(int W, vector<int>& wt, vector<int>& val, int n) {
@@ -29,7 +24,7 @@ int knapsack01(int W, vector<int>& wt, vector<int>& val, int n) {
     return dp[n][W];
 }
 
-// 2. Unbounded Knapsack
+// 2. Unbounded Knapsack [Done]
 // Intuition: You can pick the same item again and again.
 // Change direction of loops for using multiple times.
 int unboundedKnapsack(int W, vector<int>& wt, vector<int>& val, int n) {
@@ -42,9 +37,9 @@ int unboundedKnapsack(int W, vector<int>& wt, vector<int>& val, int n) {
     return dp[W];
 }
 
-// 3. Subset Sum
+// 3. Subset Sum [Done]
 // Intuition: Use previous subset results to build up to target sum.
-bool subsetSum(vector<int>& arr, int sum) {
+bool subsetSum(vector<int>& arr, int sum) { 
     int n = arr.size();
     vector<vector<bool>> dp(n+1, vector<bool>(sum+1, false));
     for (int i = 0; i <= n; i++) dp[i][0] = true;
@@ -140,7 +135,7 @@ bool canPartition(vector<int>& nums) {
     return dp[target];
 }
 
-// 9. Coin Change (Min Coins)
+// 9. Coin Change (Min Coins) [Done]
 // Intuition: Try all coins, minimize count to reach amount
 int coinChange(vector<int>& coins, int amount) {
     vector<int> dp(amount+1, 1e9);

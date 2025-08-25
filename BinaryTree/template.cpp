@@ -225,28 +225,8 @@ void treeToDLL(TreeNode* root, TreeNode*& head, TreeNode*& prev) {
     prev = root;
     treeToDLL(root->right, head, prev);
 }
-// ================================
-// Complete Graph Algorithms Template
-// ================================
 
-#include <bits/stdc++.h>
-using namespace std;
 
-const int N = 1e5;
-vector<int> adj[N];
-bool visited[N];
-
-// ================================
-// Dynamic Programming Templates
-// ================================
-
-// [Already present DP templates... kept unchanged here for brevity.]
-
-// ================================
-// Tree / BST / AVL Tree Templates
-// ================================
-
-// [Previous 1–20 templates preserved above]
 
 // 21. Count Nodes in Complete Binary Tree
 int countNodes(TreeNode* root) {
@@ -299,7 +279,21 @@ bool isSameTree(TreeNode* p, TreeNode* q) {
     if (!p || !q || p->val != q->val) return false;
     return isSameTree(p->left, q->left) && isSameTree(p->right, q->right);
 }
-
+// Check if Symmetric trees
+bool Checker(TreeNode* l, TreeNode* r){
+    if(!l && !r) return true;
+    else if((l&& !r) || (!l && r)) return false;
+    
+    if(l -> data != r -> data) return false;
+    bool outward = Checker(l -> left, r -> right);
+    bool inward = Checker(l -> right, r -> left);
+    return inward & outward;
+    
+}
+bool isSymmetric(TreeNode* root) {
+    // Code here
+    return Checker(root -> left, root -> right);
+}
 // 26. Binary Tree Maximum Path Sum
 int maxPathDown(TreeNode* root, int& maxSum) {
     if (!root) return 0;
