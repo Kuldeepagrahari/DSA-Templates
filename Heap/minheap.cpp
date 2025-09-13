@@ -1,10 +1,13 @@
+#include<bits/stdc++.h>
+using namespace std;
+
 class MinHeap {
     int arr[100];
     int size;
 
     void heapifyUp(int i) {
         while (i > 0 && arr[i] < arr[(i - 1) / 2]) {
-            std::swap(arr[i], arr[(i - 1) / 2]);
+            swap(arr[i], arr[(i - 1) / 2]);
             i = (i - 1) / 2;
         }
     }
@@ -39,3 +42,7 @@ public:
         return size ? arr[0] : -1;
     }
 };
+
+int main() {
+
+}
